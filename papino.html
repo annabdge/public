@@ -1,0 +1,73 @@
+```html
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>dad.exe</title>
+  <style>
+    body {
+      background-color: black;
+      color: #00ff00;
+      font-family: "Courier New", monospace;
+      padding: 20px;
+    }
+
+    #terminal {
+      white-space: pre-line;
+      font-size: 18px;
+    }
+
+    button {
+      background-color: black;
+      color: #00ff00;
+      border: 1px solid #00ff00;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-family: inherit;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #003300;
+    }
+  </style>
+</head>
+<body>
+
+<div id="terminal">> system ready</div>
+<button onclick="start()">avvia dad.exe</button>
+
+<script>
+const lines = [
+  "> initializing dad.exe...",
+  "> loading memories...",
+  "> checking patience... OK",
+  "> compiling love...",
+  "> injecting dad jokes...",
+  "> status: LEGEND",
+  "",
+  "> output:",
+  "> Ti voglio bene <3"
+];
+
+function typeLine(text, delay) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      document.getElementById("terminal").innerHTML += "\n" + text;
+      resolve();
+    }, delay);
+  });
+}
+
+async function start() {
+  document.querySelector("button").disabled = true;
+
+  for (let i = 0; i < lines.length; i++) {
+    await typeLine(lines[i], 800);
+  }
+}
+</script>
+
+</body>
+</html>
+```
