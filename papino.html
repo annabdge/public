@@ -9,7 +9,7 @@
       margin: 0;
       background-color: black;
       color: #00ff00;
-      font-family: "Courier New", monospace;
+      font-family: "Courier New";
 
       display: flex;
       justify-content: center;
@@ -27,23 +27,8 @@
 
     #terminal {
       text-align: left;
-      white-space: pre-line;
       font-size: 16px;
-      line-height: 1.5;
       min-height: 150px;
-    }
-
-    button {
-      margin-top: 20px;
-      background-color: black;
-      color: #00ff00;
-      border: 1px solid #00ff00;
-      padding: 12px 20px;
-      cursor: pointer;
-      font-family: inherit;
-      font-size: 16px;
-      width: 100%;
-      max-width: 250px;
     }
 
     button:hover {
@@ -72,18 +57,22 @@
 <script>
 const lines = [
   "> initializing papino.exe...",
-  "> impostazione programma in italiano...",
-  "> language = IT...",
-  "> date: 19/03/2026",
+  "> messaggio per Andrea Berti",
+  "> detto papà, pà, papi, papino, andre ...",
+  "> ... ma anche",
+  "> ... uber, mi ricarichi la carta?, mi metti l'arnica",
   "",
   "> output:",
-  "> Ti voglio bene <3"
+  "> Ti vogliamo bene <3", 
+  "",
+  "> Anna (e elena)", 
+  
 ];
 
-function typeLine(text, delay) {
+function typeLine(testo, delay) {
   return new Promise(resolve => {
     setTimeout(() => {
-      document.getElementById("terminal").innerHTML += "\n" + text;
+      document.getElementById("terminal").innerHTML += "\n" + testo;
       resolve();
     }, delay);
   });
@@ -91,7 +80,6 @@ function typeLine(text, delay) {
 
 async function start() {
   document.querySelector("button").disabled = true;
-
   for (let i = 0; i < lines.length; i++) {
     await typeLine(lines[i], 800);
   }
