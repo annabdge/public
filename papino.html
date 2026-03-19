@@ -78,7 +78,11 @@ const lines = [
   "> messaggio per Andrea Berti",
   "> detto papà, pà, papi, papino, andre ...",
   "> ... ma anche",
-  "> ... uber, mi ricarichi la carta?, mi metti l'arnica",
+  "> uber",
+  "",
+  "> mi ricarichi la carta?",
+  "> mi dai un passaggio?",
+  "> mi metti l'arnica?",
   "",
   "> output:",
   "> Ti vogliamo bene <3", 
@@ -99,7 +103,7 @@ function typeLine(testo, delay) {
 async function start() {
   document.querySelector("button").disabled = true;
   for (let i = 0; i < lines.length; i++) {
-    await typeLine(lines[i], 800);
+    await typeLine(lines[i], 1000);
   }
 }
 </script>
