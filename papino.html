@@ -1,50 +1,80 @@
-```html
 <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>dad.exe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>papino.exe</title>
   <style>
     body {
+      margin: 0;
       background-color: black;
       color: #00ff00;
       font-family: "Courier New", monospace;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      height: 100vh;
       padding: 20px;
+      box-sizing: border-box;
+    }
+    .container {
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
     }
 
     #terminal {
+      text-align: left;
       white-space: pre-line;
-      font-size: 18px;
+      font-size: 16px;
+      line-height: 1.5;
+      min-height: 150px;
     }
 
     button {
+      margin-top: 20px;
       background-color: black;
       color: #00ff00;
       border: 1px solid #00ff00;
-      padding: 10px 20px;
+      padding: 12px 20px;
       cursor: pointer;
       font-family: inherit;
-      margin-top: 20px;
+      font-size: 16px;
+      width: 100%;
+      max-width: 250px;
     }
 
     button:hover {
       background-color: #003300;
     }
+    /* per telefono */
+    @media (max-width: 480px) {
+      #terminal {
+        font-size: 14px;
+      }
+
+      button {
+        font-size: 14px;
+        padding: 10px;
+      }
+    }
   </style>
 </head>
 <body>
 
-<div id="terminal">> system ready</div>
-<button onclick="start()">avvia dad.exe</button>
+<div class="container">
+  <div id="terminal">> system ready</div>
+  <button onclick="start()">avvia papino.exe</button>
+</div>
 
 <script>
 const lines = [
-  "> initializing dad.exe...",
-  "> loading memories...",
-  "> checking patience... OK",
-  "> compiling love...",
-  "> injecting dad jokes...",
-  "> status: LEGEND",
+  "> initializing papino.exe...",
+  "> impostazione programma in italiano...",
+  "> language = IT...",
+  "> date: 19/03/2026",
   "",
   "> output:",
   "> Ti voglio bene <3"
@@ -70,4 +100,3 @@ async function start() {
 
 </body>
 </html>
-```
